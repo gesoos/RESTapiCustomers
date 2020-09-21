@@ -50,7 +50,12 @@ namespace RESTapiSoftim.Controllers
         [HttpPost]
         public async Task<ActionResult<Customers>> PostCustomer(Customers customer)
         {
-            if (!customer.Sex.Equals("M") || !customer.Sex.Equals("F"))
+            if (customer.Age < 0)
+            {
+                return BadRequest("Customer must be born already (age >= 0)!");
+            }
+
+            if (!customer.Sex.Equals("M") && !customer.Sex.Equals("F"))
             {
                 return BadRequest("Sex must be F or M!");
             }

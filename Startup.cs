@@ -34,7 +34,7 @@ namespace RESTapiSoftim
                     options.UseSqlServer(Configuration.GetConnectionString("RESTapiSoftimContext")));
 
             //services.AddDbContext<RESTapiSoftimContext>(opt =>
-             //  opt.UseInMemoryDatabase("Customers"));
+            //  opt.UseInMemoryDatabase("Customers"));
 
             services.AddSwaggerGen();
         }
